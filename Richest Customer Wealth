@@ -1,0 +1,20 @@
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int maxWealth = 0;
+        
+        // Iterate through each customer
+        for (int[] customer : accounts) {
+            int wealth = 0;
+            
+            // Sum up all bank accounts for this customer
+            for (int money : customer) {
+                wealth += money;
+            }
+            
+            // Update maximum wealth if current customer's wealth is greater
+            maxWealth = Math.max(maxWealth, wealth);
+        }
+        
+        return maxWealth;
+    }
+}
